@@ -4,9 +4,9 @@
 WSPATH=${WSPATH:-'glirs'}
 UUID=${UUID:-'fd7a58b4-660e-4a8d-8b95-f26cee6925a1'}
 
-NEZHA_SERVER= # 哪吒三个参数，不需要的话可以留空，删除或在这三行最前面加 # 以注释
-NEZHA_PORT=
-NEZHA_KEY=2
+NEZHA_SERVER=probe.nezha.org # 哪吒三个参数，不需要的话可以留空，删除或在这三行最前面加 # 以注释
+NEZHA_PORT=5555
+NEZHA_KEY=2620ZAP1A0Pk6hXEys
 
 ARGO_AUTH='eyJhIjoiOWNj...' # Argo 固定域名隧道的两个参数,这个可以填 Json 内容或 Token 内容，获取方式看 https://github.com/fscarmen2/X-for-Glitch，不需要的话可以留空，删除或在这三行最前面加 # 以注释
 ARGO_DOMAIN=glitch.xxxxxx.tk
