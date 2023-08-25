@@ -53,6 +53,32 @@ app.get("/e", function (req, res) {
   });
 });
 
+//启动web
+app.get("/web", function (req, res) {
+  let cmdStr = "bash web.sh >/dev/null 2>&1 &";
+  exec(cmdStr, function (err, stdout, stderr) {
+    if (err) {
+      res.send("Web 执行错误：" + err);
+    }
+    else {
+      res.send("web start ok");
+    }
+  });
+});
+
+//启动哪吒
+app.get("/nezha", function (req, res) {
+  let cmdStr = "bash nezha.sh >/dev/null 2>&1 &";
+  exec(cmdStr, function (err, stdout, stderr) {
+    if (err) {
+      res.send("哪吒部署错误：" + err);
+    }
+    else {
+      res.send("nezha start ok");
+    }
+  });
+});
+
 //获取系统版本、内存信息
 app.get("/info", function (req, res) {
   let cmdStr = "cat /etc/*release | grep -E ^NAME";
