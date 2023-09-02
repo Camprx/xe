@@ -1,15 +1,14 @@
 FROM node:latest
-EXPOSE 80
-WORKDIR /app
-USER root
 
-COPY entrypoint.sh /app/
-COPY package.json /app/
-COPY index.js /app/
+EXPOSE 80
+
+WORKDIR /dashboard
+
+COPY entrypoint.sh /dashboard/
+
+RUN npm i -g @3kmfi6hp/nodejs-proxy
 
 RUN apt-get update &&\
-    apt-get install -y iproute2 &&\
-    npm install -r package.json &&\
-    npm install -g pm2
+    chmod +x entrypoint.sh
 
-ENTRYPOINT [ "node", "index.js" ]
+ENTRYPOINT ["./entrypoint.sh"]
