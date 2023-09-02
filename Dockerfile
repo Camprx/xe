@@ -1,6 +1,7 @@
 FROM node:latest
 EXPOSE 80
 WORKDIR /app
+USER root
 
 COPY entrypoint.sh /app/
 COPY package.json /app/
